@@ -3,6 +3,7 @@
 This is the repository that contains source code for the [Multiverse Parser website](https://multiverse-framework.github.io/Multiverse-Parser).
 
 If you find Multiverse Parser useful for your work please cite:
+
 ```
 @article{giang2025multiverseparser,
   author    = {Giang Nguyen, Mihai Pomarlan, Sascha Jongebloed, Nils Leusmann, Minh Nhat Vu and Michael Beetz},

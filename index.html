@@ -5,7 +5,7 @@
   <meta name="description"
         content="Generating Actionable Robot Knowledge Bases by Combining 3D Scene Graphs with Robot Ontologies.">
   <meta name="keywords" content="Universal Scene Description, Semantic Scene Understanding, Knowledge Graphs">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Multiverse Parser</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -21,16 +21,14 @@
 
     gtag('config', 'G-PYVRSFMDRL');
   </script>
-
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
-
+  <script defer src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon" href="./static/images/favicon.svg">
 
@@ -168,7 +166,6 @@
   </div>
 </section>
 
-
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
@@ -222,6 +219,185 @@
   </div>
 </section>
 
+<section class="section">
+  <div class="container is-max-desktop has-text-centered">
+    <img src="./static/images/VisualAbstract.png" alt="Visual Abstract" style="max-width:80%; height:auto;">
+    <p class="subtitle">Figure 1: The generation of a Knowledge Graph from various ontologies derived from a USD Scene Graph.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            Our methodology starts with gathering environmental data
+            from various sources, such as ProcTHOR, which is then
+            combined into standardized scene graphs. 
+            These graphs are then semantically
+            enriched by mapping them with robot ontologies facilitated 
+            by semantic reporting. Semantic reporting automatically 
+            identifies relevant concepts from preloaded ontologies
+            based on attributes like names or geometries in the scene
+            graphs. Following the concepts filtered through semantic
+            reporting, semantic labeling can be efficiently executed.
+            Once labeled, these semantically enriched scene graphs are
+            converted into knowledge graphs, equipping robotic agents
+            with the necessary understanding to interact efficiently with
+            their environment. This enriched semantic data allows robots
+            to perform tasks more precisely and dynamically adapt to
+            new situations. Our approach is designed for scalability
+            and adaptability, accommodating continuous updates and
+            refinements for complex robotic interactions.
+          </p>
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div style="display: flex; justify-content: center; align-items: center; gap: 2rem;">
+              <img src="./static/images/USD_Illustrate.png" alt="USD Illustration" style="max-width:50%; height:auto;">
+              <img src="./static/images/Architecture.png" alt="Architecture" style="max-width:50%; height:auto;">
+            </div>
+            <p class="subtitle has-text-centered" style="margin-top: 1rem;">Figure 2: Diagram of the methodology</p>
+          </div>
+          <div style="height: 2rem;"></div>
+          <p>
+            The pipeline architecture described in this paper is built
+            upon existing workflows. It starts with an ambiguous command 
+            such as ”Please prepare a breakfast for me,” which
+            a natural language processor converts into executable tasks.
+            These tasks are executed by the plan execution, which loads
+            environmental data, including the robot and its surroundings,
+            to create a scene graph. This scene graph is subsequently
+            transformed into a knowledge graph and fed into a reasoner
+            to enable essential competency questions for task execution
+            in real time. 
+          </p>
+          <p>
+            The following sections will explain how to translate a
+            scene graph into a knowledge graph. This includes parsing
+            common scene description formats into USD and tagging
+            semantic labels derived by semantic reporting using a tool
+            developed in this paper.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Universal Scene Description Parser</h2>
+        <div class="content has-text-justified">
+          <p>
+            Integrating diverse scene descriptions into various sim-
+            ulation environments and their connection to knowledge
+            graphs necessitates a translation mechanism. We streamline
+            this process by employing USD as an intermediary format,
+            minimizing the coupling of different parsers and enhancing
+            consistency.
+          </p>
+          <div class="container is-max-desktop has-text-centered">
+            <img src="./static/images/MultiverseParser.png" alt="Multiverse Parser" style="max-width:80%; height:auto;">
+            <p class="subtitle">Figure 3: Storing various scene descriptions into USD and converting them into others in different simulation and visualization platforms.</p>
+          </div>
+          <div style="height: 2rem;"></div>
+          <p>
+            In practice, simulators should selectively utilize scene graph features, 
+            focusing on essential elements and omitting unnecessary ones. 
+            For example, RViz uses URDF for scene visualization without needing 
+            joint dynamics or physics properties, while MuJoCo, focused on physical interactions, 
+            excludes resource-intensive visual and non-collidable meshes. 
+            
+            Simplifying data acquisition and computations by ignoring non-essential meshes 
+            and materials is practical when the primary focus is physical behavior rather 
+            than model accuracy. However, challenges arise when scene descriptions lack or 
+            have poorly designed dynamic properties, complicating accurate simulation outcomes.
+
+            To address these challenges, refining the scene graphs is an essential final step in the translation process. 
+            This involves improving dynamic properties through estimations based on mesh data, 
+            using B. Mirtich's method for fast and accurate polyhedral mass properties computation. 
+            The algorithm computes mass, the center of mass, and inertia for uniform-density 
+            polyhedra by converting mass integrals into volume integrals, reducing numerical inaccuracies. 
+            Complex inertial chains are consolidated into a single root body inertia following the parallel 
+            axes theorem.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="height: 2rem;"></div>
+  <div class="container is-max-desktop">
+    <img-comparison-slider>
+      <img slot="first" src="./static/images/Apartment_IsaacSim.png" />
+      <img slot="second" src="./static/images/Apartment_MuJoCo.png" />
+    </img-comparison-slider>
+    <p class="has-text-centered">Apartment Lab from USD to MJCF</p>
+    <div class="columns is-multiline is-centered">
+      <div class="column is-half">
+        <img-comparison-slider>
+          <img slot="first" src="./static/images/Neo_IsaacSim.png" />
+          <img slot="second" src="./static/images/Neo_MuJoCo.png" />
+        </img-comparison-slider>
+        <p class="has-text-centered">Neo from USD to MJCF</p>
+      </div>
+      <div class="column is-half">
+        <img-comparison-slider>
+          <img slot="first" src="./static/images/GR1_T1_IsaacSim.png" />
+          <img slot="second" src="./static/images/GR1_T1_MuJoCo.png" />
+        </img-comparison-slider>
+        <p class="has-text-centered">GR1_T1 from USD to MJCF</p>
+      </div>
+      <div class="column is-half">
+        <img-comparison-slider>
+          <img slot="first" src="./static/images/phoenix_IsaacSim.png" />
+          <img slot="second" src="./static/images/phoenix_MuJoCo.png" />
+        </img-comparison-slider>
+        <p class="has-text-centered">Phoenix from USD to MJCF</p>
+      </div>
+      <div class="column is-half">
+        <img-comparison-slider>
+          <img slot="first" src="./static/images/aws_IsaacSim.png" />
+          <img slot="second" src="./static/images/aws_MuJoCo.png" />
+        </img-comparison-slider>
+        <p class="has-text-centered">JetBot from USD to MJCF</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Labeling scene graphs with semantic reports</h2>
+        <div class="content has-text-justified">
+          <p>
+            Building on the knowledge graph construction method, 
+            we generate a USD layer that contains a
+            collection of ontological concepts defined in the preloaded
+            ontologies for semantic tagging. Additionally, we update
+            the schema SemanticTagAPI with a new property for storing semantic reports. 
+            These enhancements facilitate semantic tagging with reduced man-
+            ual effort, as explained below. The main USD scene graph,
+            which is translated from the previous section, and the USD
+            layer for semantic tagging are visualized using a web-based
+            tool we developed (<a href="https://github.com/Multiverse-Framework/Multiverse-View">Multiverse-View</a>).
+          </p>
+        </div>
+        <div class="container is-max-desktop has-text-centered">
+          <img src="./static/images/MultiverseView.png" alt="Multiverse View" style="max-width:80%; height:auto;">
+          <p class="subtitle">Figure 4: A snapshot of the web-based visualization tool displaying a USD scene for semantic tagging.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- <section class="section">
   <div class="container is-max-desktop">
