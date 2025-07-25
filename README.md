@@ -1,6 +1,6 @@
 # Multiverse-Parser
 
-This is the repository that contains source code for the [Multiverse Parser website](https://multiverse-framework.github.io/Multiverse-Parser).
+This is the repository that contains source code for the [Multiverse Parser website](https://multiverse-framework.github.io/Multiverse-Parser-Paper).
 
 If you find Multiverse Parser useful for your work please cite:
 
