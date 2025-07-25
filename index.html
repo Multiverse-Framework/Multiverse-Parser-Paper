@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Generating Actionable Robot Knowledge Bases by Combining 3D Scene Graphs with Robot Ontologies.">
+  <meta name="keywords" content="Universal Scene Description, Semantic Scene Understanding, Knowledge Graphs">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiverse Parser</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://arxiv.org/pdf/2310.16737">
+            Multiverse Knowledge
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Generating Actionable Robot Knowledge Bases by Combining 3D Scene Graphs with Robot Ontologies</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://ai.uni-bremen.de/team/hoang_giang_nguyen">Giang Nguyen</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://ai.uni-bremen.de/team/mihai_pomarlan">Mihai Pomarlan</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://ai.uni-bremen.de/team/sascha_jongebloed">Sascha Jongebloed</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://ai.uni-bremen.de/team/nils_leusmann">Nils Leusmann</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.acin.tuwien.ac.at/en/staff/mnv">Minh Nhat Vu</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://ai.uni-bremen.de/team/michael_beetz">Michael Beetz</a><sup>1</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Institute for Artificial Intelligence, University of Bremen, Germany,</span>
+            <span class="author-block"><sup>2</sup>Appliable Linguistics, University of Bremen, Germany</span>
+            <span class="author-block"><sup>3</sup>Automation & Control Institute, TU Wien, Austria</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2507.11770"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2507.11770"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/Multiverse-Framework/Multiverse-Parser"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/IROS2025.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        The generation of multiple scene descriptions from a USD scene graph (dataset: <a href="https://github.com/LightwheelAI/Lightwheel_Kitchen">Lightwheel Kitchen</a>).
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p> 
+            In robotics, the effective integration of environ-
+            mental data into actionable knowledge remains a significant
+            challenge due to the variety and incompatibility of data formats
+            commonly used in scene descriptions, such as MJCF, URDF,
+            and SDF. 
+          </p>
+          <p>
+            This paper presents a novel approach that addresses
+            these challenges by developing a unified scene graph model
+            that standardizes these varied formats into the <a href="https://openusd.org/release/index.html" target="_blank" rel="noopener">Universal Scene Description (USD)</a> format. This standardization facilitates the
+            integration of these scene graphs with robot ontologies through
+            semantic reporting, enabling the translation of complex environmental 
+            data into actionable knowledge essential for cognitive
+            robotic control.
+          </p>
+          <p>
+            We evaluated our approach by converting
+            procedural 3D environments into USD format, which is then
+            annotated semantically and translated into a knowledge graph
+            to effectively answer competency questions, demonstrating its
+            utility for real-time robotic decision-making. Additionally, we
+            developed a web-based visualization tool to support the semantic 
+            mapping process, providing users with an intuitive interface
+            to manage the 3D environment.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/5zsQNvqaupw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            Our methodology starts with gathering environmental data
+            from various sources, such as ProcTHOR, which is then
+            combined into standardized scene graphs. 
+            These graphs are then semantically
+            enriched by mapping them with robot ontologies facilitated 
+            by semantic reporting. Semantic reporting automatically 
+            identifies relevant concepts from preloaded ontologies
+            based on attributes like names or geometries in the scene
+            graphs. Following the concepts filtered through semantic
+            reporting, semantic labeling can be efficiently executed.
+            Once labeled, these semantically enriched scene graphs are
+            converted into knowledge graphs, equipping robotic agents
+            with the necessary understanding to interact efficiently with
+            their environment. This enriched semantic data allows robots
+            to perform tasks more precisely and dynamically adapt to
+            new situations. Our approach is designed for scalability
+            and adaptability, accommodating continuous updates and
+            refinements for complex robotic interactions.
+          </p>
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div style="display: flex; justify-content: center; align-items: center; gap: 2rem;">
+              <img src="./static/images/USD_Illustrate.png" alt="USD Illustration" style="max-width:50%; height:auto;">
+              <img src="./static/images/Architecture.png" alt="Architecture" style="max-width:50%; height:auto;">
+            </div>
+            <p class="subtitle has-text-centered" style="margin-top: 1rem;">Figure 2: Diagram of the methodology</p>
+          </div>
+          <div style="height: 2rem;"></div>
+          <p>
+            The pipeline architecture described in this paper is built
+            upon existing workflows. It starts with an ambiguous command 
+            such as ”Please prepare a breakfast for me,” which
+            a natural language processor converts into executable tasks.
+            These tasks are executed by the plan execution, which loads
+            environmental data, including the robot and its surroundings,
+            to create a scene graph. This scene graph is subsequently
+            transformed into a knowledge graph and fed into a reasoner
+            to enable essential competency questions for task execution
+            in real time. 
+          </p>
+          <p>
+            The following sections will explain how to translate a
+            scene graph into a knowledge graph. This includes parsing
+            common scene description formats into USD and tagging
+            semantic labels derived by semantic reporting using a tool
+            developed in this paper.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Universal Scene Description Parser</h2>
+        <div class="content has-text-justified">
+          <p>
+            Integrating diverse scene descriptions into various sim-
+            ulation environments and their connection to knowledge
+            graphs necessitates a translation mechanism. We streamline
+            this process by employing USD as an intermediary format,
+            minimizing the coupling of different parsers and enhancing
+            consistency.
+          </p>
+          <div class="container is-max-desktop has-text-centered">
+            <img src="./static/images/MultiverseParser.png" alt="Multiverse Parser" style="max-width:80%; height:auto;">
+            <p class="subtitle">Figure 3: Storing various scene descriptions into USD and converting them into others in different simulation and visualization platforms.</p>
+          </div>
+          <div style="height: 2rem;"></div>
+          <p>
+            In practice, simulators should selectively utilize scene graph features, 
+            focusing on essential elements and omitting unnecessary ones. 
+            For example, <a href="https://github.com/ros-visualization/rviz" target="_blank" rel="noopener">RViz</a> uses URDF for scene visualization without needing 
+            joint dynamics or physics properties, while <a href="https://mujoco.org/" target="_blank" rel="noopener">MuJoCo</a>, focused on physical interactions, 
+            excludes resource-intensive visual and non-collidable meshes. 
+            
+            Simplifying data acquisition and computations by ignoring non-essential meshes 
+            and materials is practical when the primary focus is physical behavior rather 
+            than model accuracy. However, challenges arise when scene descriptions lack or 
+            have poorly designed dynamic properties, complicating accurate simulation outcomes.
+
+            To address these challenges, refining the scene graphs is an essential final step in the translation process. 
+            This involves improving dynamic properties through estimations based on mesh data, 
+            using <a href="https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=08b2ce791f24002743ba45ef1b2d35a4accb4a7c" target="_blank" rel="noopener">B. Mirtich's method</a> for fast and accurate polyhedral mass properties computation. 
+            The algorithm computes mass, the center of mass, and inertia for uniform-density 
+            polyhedra by converting mass integrals into volume integrals, reducing numerical inaccuracies. 
+            Complex inertial chains are consolidated into a single root body inertia following the parallel 
+            axes theorem.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="height: 2rem;"></div>
+  <h3 class="title is-4 has-text-centered">Environment Description Conversion Examples</h3>
+  <div class="container is-max-desktop">
+    <img-comparison-slider>
+      <img slot="first" src="./static/images/Apartment_IsaacSim.png" />
+      <img slot="second" src="./static/images/Apartment_MuJoCo.png" />
+    </img-comparison-slider>
+    <p class="has-text-centered">
+      Figure 4: Kitchen Lab from USD to MJCF (dataset: <a href="https://ai.uni-bremen.de/" target="_blank" rel="noopener">AICOR Institute for Artificial Intelligence, University of Bremen</a>)
+    </p>
+  </div>
+  <div style="height: 2rem;"></div>
+  <h3 class="title is-4 has-text-centered">Robot Description Conversion Examples</h3>
+  <div class="container is-max-desktop">
+    <div class="columns is-multiline is-centered">
+      <div class="column is-half">
+        <img-comparison-slider>
+          <img slot="first" src="./static/images/Neo_IsaacSim.png" />
+          <img slot="second" src="./static/images/Neo_MuJoCo.png" />
+        </img-comparison-slider>
+        <p class="has-text-centered">Figure 5: Neo from USD to MJCF (dataset: 
+          <a href="https://docs.isaacsim.omniverse.nvidia.com/4.5.0/installation/download.html#latest-release" target="_blank" rel="noopener">Isaac Sim</a>)
+        </p>
+      </div>
+      <div class="column is-half">
+        <img-comparison-slider>
+          <img slot="first" src="./static/images/GR1_T1_IsaacSim.png" />
+          <img slot="second" src="./static/images/GR1_T1_MuJoCo.png" />
+        </img-comparison-slider>
+        <p class="has-text-centered">Figure 6: GR1_T1 from USD to MJCF (dataset: 
+          <a href="https://docs.isaacsim.omniverse.nvidia.com/4.5.0/installation/download.html#latest-release" target="_blank" rel="noopener">Isaac Sim</a>)
+        </p>
+      </div>
+      <div class="column is-half">
+        <img-comparison-slider>
+          <img slot="first" src="./static/images/phoenix_IsaacSim.png" />
+          <img slot="second" src="./static/images/phoenix_MuJoCo.png" />
+        </img-comparison-slider>
+        <p class="has-text-centered">Figure 7: Phoenix from USD to MJCF (dataset: 
+          <a href="https://docs.isaacsim.omniverse.nvidia.com/4.5.0/installation/download.html#latest-release" target="_blank" rel="noopener">Isaac Sim</a>)
+        </p>
+      </div>
+      <div class="column is-half">
+        <img-comparison-slider>
+          <img slot="first" src="./static/images/aws_IsaacSim.png" />
+          <img slot="second" src="./static/images/aws_MuJoCo.png" />
+        </img-comparison-slider>
+        <p class="has-text-centered">Figure 8: JetBot from USD to MJCF (dataset: 
+          <a href="https://docs.isaacsim.omniverse.nvidia.com/4.5.0/installation/download.html#latest-release" target="_blank" rel="noopener">Isaac Sim</a>)
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Labeling scene graphs with semantic reports</h2>
+        <div class="content has-text-justified">
+          <p>
+            Building on the knowledge graph construction method proposed by <a href="https://arxiv.org/pdf/2310.16737" target="_blank" rel="noopener">G. Nguyen et al.</a>,
+            we generate a USD layer that contains a
+            collection of ontological concepts defined in the preloaded
+            ontologies for semantic tagging. Additionally, we update
+            the schema SemanticTagAPI with a new property for storing semantic reports. 
+            These enhancements facilitate semantic tagging with reduced manal effort. The main USD scene graph,
+            which is translated from the previous section, and the USD
+            layer for semantic tagging are visualized using a web-based
+            tool we developed (<a href="https://github.com/Multiverse-Framework/Multiverse-View">Multiverse-View</a>).
+          </p>
+        </div>
+        <div class="container is-max-desktop has-text-centered">
+          <img src="./static/images/MultiverseView.png" alt="Multiverse View" style="max-width:80%; height:auto;">
+          <p class="subtitle">Figure 9: A snapshot of the web-based visualization tool displaying a USD scene for semantic tagging.</p>
+        </div>
+        <div style="height: 2rem;"></div>
+        <div class="content has-text-justified">
+          <p>
+            USD prim names are preprocessed and sent to a text-to-triples
+            tool, <a href="http://wit.istc.cnr.it/stlab-tools/fred/demo/" target="_blank" rel="noopener">FRED</a>. Some context is needed to coax FRED into
+            giving a <a href="https://www.dbpedia.org/resources/ontology/" target="_blank" rel="noopener">DBPedia</a> link; thus, if we query for some object
+            name X, we ask FRED to parse ”an X in a room” and check
+            if what FRED identifies as the topic of this sentence has
+            a DBPedia link. Assuming a DBPedia link is found, it is
+            usually possible to hop from one knowledge graph to another
+            and collect more sources of information about an object. If
+            FRED cannot find a DBPedia link, we use a heuristic that
+            matches the object name against a list of words associated
+            with the concepts in <a href="https://ease-crc.github.io/soma/" target="_blank" rel="noopener">SOMA DFL</a>.
+          </p>
+        </div>
+        <div class="container is-max-desktop has-text-centered">
+          <img src="./static/images/SemRepPip.png" alt="FRED" style="max-width:80%; height:auto;">
+          <p class="subtitle">Figure 10: Overview of the semantic reporting pipeline.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Experiments</h2>
+        <div class="content has-text-justified">
+          <p>
+            To evaluate our approach, we performed two experiments. Both can be reproduced using the provided Docker container on BinderHub, available through our <a href="https://vib.ai.uni-bremen.de/" target="_blank" rel="noopener">Virtual Research Building</a>.
+          </p>
+          <div class="container is-max-desktop has-text-centered">
+            <img src="./static/images/BinderHub.png" alt="BinderHub" style="max-width:100%; height:auto;">
+            <p class="subtitle">Figure 11: BinderHub interface for launching the Multiverse-Parser Docker container to replicate experiments.</p>
+          </div>
+        </div>
+        <div class="has-text-centered" style="margin-bottom: 2rem;">
+          <a href="https://binder.intel4coro.de/v2/gh/Multiverse-Framework/Multiverse-Docker/ICRA-2025?urlpath=lab%2Ftree%2FMultiverse-Tutorials%2Ftutorials%2Fmultiverse_parser_quick_start.ipynb" target="_blank" rel="noopener" class="button is-black is-large is-rounded">
+            Multiverse Parser Experiment (for URDF, MJCF and USDA as input)
+          </a>
+          <video id="Multiverse Parser" autoplay muted loop playsinline height="100%">
+            <source src="./static/videos/MultiverseParser.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="has-text-centered" style="margin-bottom: 2rem;">
+          <a href="https://binder.intel4coro.de/v2/gh/Multiverse-Framework/Multiverse-Docker/ICRA-2025?urlpath=lab%2Ftree%2FMultiverse-Tutorials%2Ftutorials%2Fmultiverse_knowledge_quick_start.ipynb" target="_blank" rel="noopener" class="button is-black is-large is-rounded">
+            Multiverse Parser Experiment (for ProcTHOR as input)
+          </a>
+        </div>
+        <div class="has-text-centered" style="margin-bottom: 2rem;">
+          <a href="https://binder.intel4coro.de/v2/gh/sasjonge/semantic-map-lab.git/dfl_reasoner?labpath=notebooks%2Fsemantic_map.ipynb" target="_blank" rel="noopener" class="button is-black is-large is-rounded">
+            Competency Questions Experiment
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{giang2025multiverseparser,
+  author    = {Giang Nguyen, Mihai Pomarlan, Sascha Jongebloed, Nils Leusmann, Minh Nhat Vu and Michael Beetz},
+  title     = {Generating Actionable Robot Knowledge Bases by Combining 3D Scene Graphs with Robot Ontologies},
+  journal   = {IROS},
+  year      = {2025},
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
