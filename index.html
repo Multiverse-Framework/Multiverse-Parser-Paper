@@ -182,8 +182,7 @@
           <p>
             This paper presents a novel approach that addresses
             these challenges by developing a unified scene graph model
-            that standardizes these varied formats into the Universal Scene
-            Description (USD) format. This standardization facilitates the
+            that standardizes these varied formats into the <a href="https://openusd.org/release/index.html" target="_blank" rel="noopener">Universal Scene Description (USD)</a> format. This standardization facilitates the
             integration of these scene graphs with robot ontologies through
             semantic reporting, enabling the translation of complex environmental 
             data into actionable knowledge essential for cognitive
@@ -295,8 +294,8 @@
           <p>
             In practice, simulators should selectively utilize scene graph features, 
             focusing on essential elements and omitting unnecessary ones. 
-            For example, RViz uses URDF for scene visualization without needing 
-            joint dynamics or physics properties, while MuJoCo, focused on physical interactions, 
+            For example, <a href="https://github.com/ros-visualization/rviz" target="_blank" rel="noopener">RViz</a> uses URDF for scene visualization without needing 
+            joint dynamics or physics properties, while <a href="https://mujoco.org/" target="_blank" rel="noopener">MuJoCo</a>, focused on physical interactions, 
             excludes resource-intensive visual and non-collidable meshes. 
             
             Simplifying data acquisition and computations by ignoring non-essential meshes 
@@ -306,7 +305,7 @@
 
             To address these challenges, refining the scene graphs is an essential final step in the translation process. 
             This involves improving dynamic properties through estimations based on mesh data, 
-            using B. Mirtich's method for fast and accurate polyhedral mass properties computation. 
+            using <a href="https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=08b2ce791f24002743ba45ef1b2d35a4accb4a7c" target="_blank" rel="noopener">B. Mirtich's method</a> for fast and accurate polyhedral mass properties computation. 
             The algorithm computes mass, the center of mass, and inertia for uniform-density 
             polyhedra by converting mass integrals into volume integrals, reducing numerical inaccuracies. 
             Complex inertial chains are consolidated into a single root body inertia following the parallel 
